@@ -1,0 +1,251 @@
+/* ---------- Variables de color y tipografía ---------- */
+:root {
+    --fondo: #f7fbfd;
+    --texto: #1f3a4d;
+    --azul-suave: #cde8f6;
+    --amarillo: #ffd45e;
+    --coral: #ff8fa3;
+    --blanco: #ffffff;
+    --fuente-titulos: "Fredoka", "Trebuchet MS", sans-serif;
+    --fuente-texto: "Nunito", Arial, sans-serif;
+}
+
+/* ---------- Base ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fuente-texto);
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+h1, h2, h3, .logo {
+    font-family: var(--fuente-titulos);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+a {
+    color: inherit;
+}
+
+a:focus-visible {
+    outline: 3px solid var(--coral);
+    outline-offset: 3px;
+}
+
+/* ---------- Header ---------- */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 14px 6vw;
+    background: var(--blanco);
+    border-bottom: 3px solid var(--amarillo);
+}
+
+.logo {
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.menu {
+    display: flex;
+    gap: 24px;
+}
+
+.menu a {
+    text-decoration: none;
+    font-weight: 700;
+    padding: 4px 0;
+    border-bottom: 3px solid transparent;
+}
+
+.menu a:hover {
+    border-bottom-color: var(--coral);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 80px 6vw;
+    background: var(--azul-suave);
+}
+
+.hero-texto {
+    max-width: 560px;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    margin-bottom: 16px;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    margin-bottom: 28px;
+}
+
+.hero-visual {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    flex-shrink: 0;
+}
+
+.burbuja {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--blanco);
+}
+
+.b1 { width: 160px; height: 160px; font-size: 4rem; top: 0; left: 0; }
+.b2 { width: 120px; height: 120px; font-size: 3rem; top: 40px; right: 0; background: var(--amarillo); }
+.b3 { width: 100px; height: 100px; font-size: 2.5rem; bottom: 0; left: 80px; background: var(--coral); }
+
+/* ---------- Botones ---------- */
+.boton {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 999px;
+    background: var(--amarillo);
+    color: var(--texto);
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.15s;
+}
+
+.boton:hover {
+    transform: translateY(-2px);
+}
+
+.boton-oscuro {
+    background: var(--texto);
+    color: var(--blanco);
+}
+
+/* ---------- Secciones ---------- */
+.seccion {
+    padding: 70px 6vw;
+}
+
+.seccion h2 {
+    font-size: 2rem;
+    margin-bottom: 32px;
+}
+
+/* ---------- Productos ---------- */
+.grilla {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.tarjeta {
+    background: var(--blanco);
+    padding: 24px;
+    border-radius: 20px;
+    border: 2px solid var(--azul-suave);
+}
+
+.tarjeta h3 {
+    font-size: 1.25rem;
+    margin: 12px 0 6px;
+}
+
+.icono {
+    display: grid;
+    place-items: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: var(--azul-suave);
+    font-size: 1.8rem;
+}
+
+/* ---------- Oferta ---------- */
+.oferta {
+    padding: 60px 6vw;
+    background: var(--amarillo);
+    text-align: center;
+}
+
+.oferta h2 {
+font-size: 2rem;
+margin-bottom: 10px;
+}
+
+.oferta p {
+margin-bottom: 24px;
+}
+
+/* ---------- Ventajas ---------- */
+.ventajas {
+list-style: none;
+max-width: 640px;
+display: grid;
+gap: 16px;
+}
+
+.ventajas li {
+padding-left: 20px;
+border-left: 5px solid var(--coral);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+padding: 50px 6vw;
+background: var(--texto);
+color: var(--blanco);
+}
+
+.footer h2 {
+margin-bottom: 12px;
+}
+
+.footer a {
+color: var(--amarillo);
+}
+
+.copy {
+margin-top: 20px;
+font-size: 0.9rem;
+opacity: 0.7;
+}
+
+/* ---------- Celulares ---------- */
+@media (max-width: 720px) {
+.hero {
+    flex-direction: column;
+    padding: 50px 6vw;
+}
+
+.hero-visual {
+    width: 240px;
+    height: 240px;
+}
+
+.menu {
+    gap: 16px;
+    flex-wrap: wrap;
+}
+}
